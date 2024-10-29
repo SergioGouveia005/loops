@@ -14,11 +14,18 @@ def calculate_weekly_pay(hours_worked):
 
 
     # Function implementation here ...
-    regular_hours = hours_worked - (hours_worked % standard_hours)
-    overtime_hours = hours_worked % standard_hours
+    regular_hours = 0
+    overtime_hours = 0
+    for i in range(hours_worked):
+        if i < standard_hours:
+            regular_hours += 1
+        else:
+            overtime_hours += 1
     total_pay = (regular_hours * regular_rate) + (overtime_hours * overtime_rate)
     return total_pay
     
 # # Code Example
-overtime_pay = calculate_weekly_pay(36) # return 438 i.e, 438 in pounds per week.
-print(overtime_pay)
+# overtime_pay = calculate_weekly_pay(36) # return 438 i.e, 438 in pounds per week.
+# print(overtime_pay)
+# for i in range(1,101):
+#     print(calculate_weekly_pay(i))
