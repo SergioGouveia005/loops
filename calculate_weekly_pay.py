@@ -15,7 +15,7 @@ def calculate_weekly_pay(hours_worked):
 
     # Function implementation here ...
     regular_hours = hours_worked - (hours_worked % standard_hours)
-    overtime_hours = hours_worked % 35
+    overtime_hours = hours_worked % standard_hours
     total_pay = (regular_hours * regular_rate) + (overtime_hours * overtime_rate)
     return total_pay
     
